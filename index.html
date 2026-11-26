@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello AI Workshop</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Segoe UI", "Noto Sans Thai", Tahoma, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+      color: #1f2937;
+    }
+    .card {
+      background: #fff;
+      max-width: 520px;
+      width: 90%;
+      padding: 40px 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+    h1 { margin: 0 0 12px; font-size: 2rem; color: #4338ca; }
+    p { font-size: 1.1rem; line-height: 1.6; margin: 0 0 28px; }
+    button {
+      font-size: 1rem;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 999px;
+      background: #4f46e5;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover { background: #4338ca; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Hello AI Workshop</h1>
+    <p id="message">ยินดีต้อนรับสู่เวิร์กช็อปทดลอง AI ของเรา! วันนี้เราจะมาลองสร้างสิ่งสนุก ๆ ด้วยกัน</p>
+    <button id="changeBtn" type="button">กดเพื่อเปลี่ยนข้อความ</button>
+  </main>
+  <script>
+    var messages = [
+      "ยินดีต้อนรับสู่เวิร์กช็อปทดลอง AI ของเรา! วันนี้เราจะมาลองสร้างสิ่งสนุก ๆ ด้วยกัน",
+      "เยี่ยมมาก! คุณกดปุ่มสำเร็จแล้ว 🎉",
+      "AI ช่วยให้งานง่ายขึ้น แต่ไอเดียดี ๆ มาจากคุณ ✨",
+      "ขอให้สนุกกับการเรียนรู้ในเวิร์กช็อปนี้นะ 🚀"
+    ];
+    var index = 0;
+    document.getElementById("changeBtn").addEventListener("click", function () {
+      index = (index + 1) % messages.length;
+      document.getElementById("message").textContent = messages[index];
+    });
+  </script>
+</body>
+</html>
